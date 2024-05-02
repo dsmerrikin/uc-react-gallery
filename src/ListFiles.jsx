@@ -61,17 +61,14 @@ const ListFiles = ({ updateList }) => {
     <div className="file-list">
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Process Image</Modal.Title>
+          <Modal.Title>{fileToProcess.original_filename}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ProcessImage file={fileToProcess} />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
@@ -95,15 +92,12 @@ const ImageCard = ({ file, deleteFile, editFile }) => {
       <div className="header">
         <span className="name">{file.original_filename}</span>
         <div className="actions">
-          <span className="icon" onClick={(image) => editFile(file)}>
-            <FiEdit />
-          </span>
           <span className="icon" onClick={(id) => deleteFile(file.uuid)}>
             <FiTrash2 />
           </span>
         </div>
       </div>
-      <div className="file">
+      <div className="file" onClick={(image) => editFile(file)}>
         <img src={file.original_file_url} alt={file.original_filename} />
       </div>
     </li>

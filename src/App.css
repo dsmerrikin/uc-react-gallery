@@ -55,6 +55,7 @@
   justify-content: center;
   padding: 10px;
   background-color: #ececec;
+  cursor: pointer;
 }
 
 .uc-list-images > li.item .file > img {
