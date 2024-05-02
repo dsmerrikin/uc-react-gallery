@@ -60,9 +60,6 @@ const ListFiles = ({ updateList }) => {
   return (
     <div className="file-list">
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{fileToProcess.original_filename}</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
           <ProcessImage file={fileToProcess} />
         </Modal.Body>
